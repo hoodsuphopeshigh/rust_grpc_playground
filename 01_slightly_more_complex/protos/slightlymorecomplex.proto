@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package slightlymorecomplex;
+
+service UserService {
+	rpc CreateUser (UserRequest) returns (UserResponse) {}
+}
+
+message User {
+	string name = 1;
+	string email = 2;
+	int32 age = 3;
+}
+
+message UserRequest {
+	slightlymorecomplex.User data = 1;
+}
+
+message UserResponse {
+	string message = 1;
+	int32 created = 2;
+}
