@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package usingjson;
+
+service JsonService {
+	rpc CreateUser (UserRequest) returns (UserResponse) {}
+	rpc CreateMultipleUsers (UserRequests) returns (UserResponses) {}
+}
+
+message User {
+	string name = 1;
+	string email = 2;
+	int32 age = 3;
+
+}
+
+message UserRequest {
+	User data = 1;
+}
+
+message UserRequests {
+	repeated User users = 1;
+}
+
+message UserResponse {
+	string message = 1;
+	int32 created = 2;
+}
+
+message UserResponses {
+	repeated UserResponse response = 1;
+}
