@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package auth;
+
+service Auth {
+	rpc SecretThing (AuthRequest) returns (AuthResponse) {}
+}
+
+message AuthRequest {
+	string payload = 1;
+}
+
+message AuthResponse {
+	string payload = 1;
+}
